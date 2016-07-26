@@ -1,11 +1,6 @@
-#= require game/engine
 #= require three/three
 
-$(window).resize ->
-  renderer.setSize element.innerWidth(), element.innerHeight()
-  camera.aspect = element.innerWidth() / element.innerHeight()
-  camera.updateProjectionMatrix()
-  return
+window.Engine = {} if not window.Engine?
 
 Engine.Graphics = (settings) ->
   @settings           = $.extend({ fps: 1 }, settings)
@@ -19,13 +14,22 @@ Engine.Graphics = (settings) ->
   @renderer.setSize         @settings.element.innerWidth(), @settings.element.innerHeight()
   @settings.element.append  @renderer.domElement
 
-  graphics = @
+  gfx = @
+
   @render = ->
     setTimeout ->
-      requestAnimationFrame(graphics.render)
-    , 1000 / graphics.settings.fps
-    graphics.settings.animate()
-    graphics.renderer.render graphics.scene, graphics.camera
+      requestAnimationFrame(gfx.render)
+    , 1000 / gfx.settings.fps
+    gfx.settings.animate()
+    gfx.renderer.render gfx.scene, gfx.camera
+    return
+
+  $(window).resize ->
+    x = gfx.settings.element.innerWidth()
+    y = gfx.settings.element.innerHeight()
+    gfx.renderer.setSize x, y
+    gfx.camera.aspect = x / y
+    gfx.camera.updateProjectionMatrix()
     return
 
   return
