@@ -12,17 +12,26 @@
     = javascript_include_tag controller_path, 'data-turbolinks-track' => false
 
   %body
+    / navbar
     .container-fluid
       = render 'layouts/navbar'
+
+    / header
     .container-fluid
       = yield :header
+
+    / messages
     .container-fluid
       .row
         .col-md-8.col-md-offset-2
           = render 'layouts/messages'
+
+    / main body
     .container-fluid
       .row
         .col-md-10.col-md-offset-1
           = yield
+
+    / bottom
     .container-fluid
       = render 'layouts/bottom'
