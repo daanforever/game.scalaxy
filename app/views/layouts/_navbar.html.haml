@@ -10,8 +10,11 @@
     .collapse.navbar-collapse
       - if current_user and current_user.email
         .nav.navbar-nav.navbar-right
-          = current_user.email
-          = link_to destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn' do
+
+          %a.btn.btn-default.navbar-btn.btn-sm
+            = current_user.email
+
+          = link_to destroy_user_session_path, method: :delete, class: 'btn btn-default navbar-btn btn-sm' do
             %span.glyphicon.glyphicon-off
       - else
         .nav.navbar-nav.navbar-right

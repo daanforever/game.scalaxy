@@ -1,10 +1,9 @@
-#= require underscore
-#= require backbone
-#= require three/three
+#= require three
 
-window.Engine || (window.Engine = {})
+console.log('Loading Game.Engine.Graphics.Three')
+Game.Engine.Graphics.Three = (settings) ->
+  console.log('Initializing Game.Engine.Graphics.Three')
 
-Engine.Graphics = (settings) ->
   @settings           = $.extend({ fps: 1 }, settings)
   @scene              = new (THREE.Scene)
   @camera             = new (THREE.PerspectiveCamera)(75, @settings.element.innerWidth() / @settings.element.innerHeight(), 0.1, 1000)
