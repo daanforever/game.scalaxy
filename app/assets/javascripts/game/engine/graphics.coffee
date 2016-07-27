@@ -20,13 +20,17 @@ Engine.Graphics = (settings) ->
 
   @animate = ->
 
-  @render = ->
+  @iterate = ->
     setTimeout ->
-      requestAnimationFrame(gfx.render)
+      requestAnimationFrame(gfx.iterate)
     , 1000 / gfx.settings.fps
-    gfx.animate()
+    gfx.animate(gfx.options)
     gfx.renderer.render gfx.scene, gfx.camera
     return
+
+  @render = (options) ->
+    gfx.options = options
+    gfx.iterate()
 
   $(window).resize ->
     x = gfx.settings.element.innerWidth()

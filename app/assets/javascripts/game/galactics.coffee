@@ -13,19 +13,13 @@ Game.Galactics = ->
   material    = new (THREE.MeshBasicMaterial)(color: 0xAACCFF)
 
   cube        = new (THREE.Mesh)(geometry, material)
-  light       = new (THREE.AmbientLight)( 0x000000 )
 
   graphics.scene.add( cube )
-  graphics.scene.add( light )
-
-  graphics.animate = ->
-    cube.rotation.x += 0.1
-    cube.rotation.y += 0.1
-    return
-
   graphics.render()
 
-  return
+  graphics.animate = (options) ->
+    cube.rotation.x += 0.1
+    cube.rotation.y += 0.1
 
-$(document).ready(Game.Galactics)
-$(document).on('page:load', Game.Galactics)
+$ ->
+  Game.Galactics()
