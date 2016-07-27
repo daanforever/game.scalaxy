@@ -2,6 +2,3 @@
 #= require jquery_ujs
 #= require bootstrap
 #= require turbolinks
-#= require hamlcoffee
-#= require underscore
-#= require backbone

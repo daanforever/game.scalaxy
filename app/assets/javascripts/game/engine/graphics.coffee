@@ -1,6 +1,8 @@
+#= require underscore
+#= require backbone
 #= require three/three
 
-window.Engine = {} if not window.Engine?
+window.Engine || (window.Engine = {})
 
 Engine.Graphics = (settings) ->
   @settings           = $.extend({ fps: 1 }, settings)
@@ -16,11 +18,13 @@ Engine.Graphics = (settings) ->
 
   gfx = @
 
+  @animate = ->
+
   @render = ->
     setTimeout ->
       requestAnimationFrame(gfx.render)
     , 1000 / gfx.settings.fps
-    gfx.settings.animate()
+    gfx.animate()
     gfx.renderer.render gfx.scene, gfx.camera
     return
 
