@@ -10,6 +10,4 @@ class Game.Views.GalacticsIndex extends Backbone.View
   render: ->
     console.log('Rendering Game.Views.GalacticsIndex')
     console.log(@collection)
-    @collection.each (model) ->
-      console.log model
     return @

@@ -4,3 +4,4 @@ class Game.Collections.Galactics extends Backbone.Collection
   initialize: (options) ->
     console.log('Initializing Game.Collections.Galactics')
     @engine = options.engine
+    @fetch({reset: true})
