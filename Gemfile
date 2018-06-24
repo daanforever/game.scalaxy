@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'bootstrap'                       # The most popular HTML, CSS, and JavaScript framework
+gem 'jquery-rails'                    # Provides jQuery and the jQuery-ujs driver
 gem 'puma'                            # Web server. Usage: rails s
 gem 'haml'                            # HTML Abstraction Markup Language
 gem 'simple_form'                     # Forms made easy for Rails!
@@ -33,6 +33,8 @@ gem 'settingson'                      # Settings management
 gem 'http'                            # A fast Ruby HTTP client
 gem 'faker'                           # A library for generating fake data
 gem 'rails_semantic_logger'           # A feature rich logging framework
+
+gem 'devise'                          # Flexible authentication solution for Rails with Warden
 
 group :development do
   # gem 'railroady'                     # Class diagram generator. Usage: rake diagram:all

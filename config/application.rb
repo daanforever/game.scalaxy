@@ -15,5 +15,16 @@ module GameScalaxy
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.assets.compile     = true
+
+    config.generators do |g|
+      g.test_framework :rspec, :views => false, :fixture => true
+      g.fixture_replacement :factory_bot, :dir => 'spec/factories'
+      g.template_engine :haml
+      g.view_specs false
+      g.helper_specs false
+    end
+
   end
 end

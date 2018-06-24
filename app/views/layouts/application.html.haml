@@ -1,11 +1,19 @@
 !!!
-%html
+%html{lang: 'en'}
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title GameScalaxy
+    %title= content_for?(:title) ? yield(:title) : Rails.application.class.parent_name
+    %meta{charset: 'utf-8'}
+    %meta{content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible'}
+    %meta{content: 'width=device-width, initial-scale=1, shrink-to-fit=no', name: 'viewport'}
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag controller_path, media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'turbolinks', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    = render 'layouts/navbar'
+    = yield :header
+    = render 'layouts/messages'
+    .container-fluid
+      = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag controller_path, 'data-turbolinks-track' => 'reload'
