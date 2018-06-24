@@ -5,8 +5,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'rails', '~> 5.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -20,41 +18,48 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
+gem 'bootstrap'                       # The most popular HTML, CSS, and JavaScript framework
+gem 'puma'                            # Web server. Usage: rails s
+gem 'haml'                            # HTML Abstraction Markup Language
+gem 'simple_form'                     # Forms made easy for Rails!
+gem "responders"                      # A set of responders modules to dry up
+gem 'seed_dump'                       # Rails plugin to create seed data
+gem 'settingson'                      # Settings management
+
+gem 'http'                            # A fast Ruby HTTP client
+gem 'faker'                           # A library for generating fake data
+gem 'rails_semantic_logger'           # A feature rich logging framework
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  # gem 'railroady'                     # Class diagram generator. Usage: rake diagram:all
+  gem 'web-console'                   # Rails Console on the Browser
+  gem 'byebug'                        # TODO: add comment or delete
+  # gem 'better_errors'                 # Better errors handler
+  # gem 'binding_of_caller'             # For better_errors
+  # gem 'meta_request'                  # For RailsPanel (chrome extention)
+  gem 'rack-mini-profiler'            # Rails profiler
+  # gem 'brakeman'                      # Security scanner. Usage: brakeman [-o file.html]
+  # gem 'bullet'                        # Query optimization # TODO need to configure
+  gem 'annotate'                      # Annotate ActiveRecord models. Usage: annotate
+  gem 'haml-rails'                    # Integration for HAML
+end
+
+group :development, :test do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring'                        # Spring speeds up development
+  gem 'spring-commands-rspec'         # Implements the rspec command for Spring
 end
 
 group :test do
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'selenium-webdriver'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'rspec-rails'                   # Test suite
+  gem 'factory_bot_rails'             # Fixtures replacement
+  gem 'database_cleaner'              # Helper gem for rspec
+  gem 'simplecov', require: false     # Code coverage
+  gem 'webmock', require: false       # Library for stubbing HTTP requests
+  gem 'capybara', require: false      # Acceptance test framework for web applications
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
