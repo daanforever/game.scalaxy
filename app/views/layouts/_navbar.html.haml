@@ -13,3 +13,5 @@
     %ul.navbar-nav
       %li.nav-item
         .navbar-text v:0.1.0
+      %li{ active_if('devise/sessions') }
+        = link_to t('menu.login', default: 'Login'),  new_user_session_path, class: 'nav-link'

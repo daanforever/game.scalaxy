@@ -14,4 +14,8 @@ Rails.application.config.assets.paths << Rails.root.join('lib/assets')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-Rails.application.config.assets.precompile += %w( turbolinks.js welcome.* )
+Rails.application.config.assets.precompile += %w(
+  turbolinks.js
+  devise/*
+  welcome.*
+)
