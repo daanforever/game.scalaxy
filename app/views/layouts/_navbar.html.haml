@@ -1,15 +1,15 @@
-.navbar.navbar-default
-  .container-fluid
-    .navbar-header
-      %button.navbar-toggle.collapsed{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to content_for?(:title) ? yield(:title) : Rails.application.class.parent_name, root_path, class: "navbar-brand"
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li{ active_if('cms') }
-          = link_to t('menu.cms', default: 'CMS'),  root_path
-      %ul.nav.navbar-nav.navbar-right
-        %p.navbar-text v:0.1.0
+.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to content_for?(:title) ? yield(:title) : Rails.application.class.parent_name, root_path, class: "navbar-brand"
+
+  %button.navbar-toggler(type="button" data-toggle="collapse" data-target="#NavMain" aria-controls="NavMain" aria-expanded="false" aria-label="Toggle navigation")
+    %span.navbar-toggler-icon
+
+  .collapse.navbar-collapse#NavMain
+    %ul.navbar-nav.flex-grow-1
+      %li{ active_if('welcome', 'index') }
+        = link_to t('menu.cms', default: 'CMS'),  root_path, class: 'nav-link'
+      %li{ active_if('test', 'index') }
+        = link_to t('menu.inactive', default: 'Inactive'),  root_path, class: 'nav-link'
+    %ul.navbar-nav
+      %li.nav-item
+        .navbar-text v:0.1.0

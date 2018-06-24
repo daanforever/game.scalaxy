@@ -2,14 +2,10 @@ module ApplicationHelper
 
   def active_if(section, action = nil)
     if match_controller(section, action)
-      { class: 'active' }
+      { class: 'nav-item active' }
     else
-      { class: 'inactive' }
+      { class: 'nav-item inactive' }
     end
-  end
-
-  def is_active_if(section, action = nil)
-    'active' if match_controller(section, action)
   end
 
   def simple_form_horizontal(object, *args, &block)

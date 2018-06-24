@@ -10,10 +10,11 @@
     = javascript_include_tag 'turbolinks', 'data-turbolinks-track' => 'reload'
     = csrf_meta_tags
   %body
-    = render 'layouts/navbar'
+    .container-fluid
+      = render 'layouts/navbar'
     = yield :header
     = render 'layouts/messages'
-    .container-fluid
+    .container
       = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     = javascript_include_tag controller_path, 'data-turbolinks-track' => 'reload'
