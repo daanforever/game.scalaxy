@@ -1,7 +1,7 @@
 !!!
 %html{lang: 'en'}
   %head
-    %title= content_for?(:title) ? yield(:title) : Rails.application.class.parent_name
+    %title= content_for?(:title) ? yield(:title) : (ENV['APP_TITLE'] || Rails.application.class.parent_name)
     %meta{charset: 'utf-8'}
     %meta{content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible'}
     %meta{content: 'width=device-width, initial-scale=1, shrink-to-fit=no', name: 'viewport'}
@@ -13,7 +13,8 @@
     .container-fluid
       = render 'layouts/navbar'
     = yield :header
-    = render 'layouts/messages'
+    .container{style: 'height: 4em;'}
+      = render 'layouts/messages'
     .container
       = yield
     = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
