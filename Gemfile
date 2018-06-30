@@ -26,7 +26,7 @@ gem 'jquery-rails'                    # Provides jQuery and the jQuery-ujs drive
 gem 'puma'                            # Web server. Usage: rails s
 gem 'haml'                            # HTML Abstraction Markup Language
 gem 'simple_form'                     # Forms made easy for Rails!
-gem "responders"                      # A set of responders modules to dry up
+gem 'responders'                      # A set of responders modules to dry up
 gem 'seed_dump'                       # Rails plugin to create seed data
 gem 'settingson'                      # Settings management
 
@@ -63,5 +63,5 @@ group :test do
   gem 'database_cleaner'              # Helper gem for rspec
   gem 'simplecov', require: false     # Code coverage
   gem 'webmock', require: false       # Library for stubbing HTTP requests
-  gem 'capybara', require: false      # Acceptance test framework for web applications
+  # gem 'capybara', require: false      # Acceptance test framework for web applications
 end
