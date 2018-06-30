@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'jquery-rails'                    # Provides jQuery and the jQuery-ujs driver
+# gem 'jquery-rails'                    # Provides jQuery and the jQuery-ujs driver
 gem 'puma'                            # Web server. Usage: rails s
 gem 'haml'                            # HTML Abstraction Markup Language
 gem 'simple_form'                     # Forms made easy for Rails!

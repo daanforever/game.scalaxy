@@ -43,7 +43,7 @@ class SourcesController < ApplicationController
     respond_to do |format|
       if @source.update(source_params)
         format.html { redirect_to @source, notice: 'Source was successfully updated.' }
-        format.json { render :show, status: :ok, location: @source }
+        format.json { render :show, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @source.errors, status: :unprocessable_entity }

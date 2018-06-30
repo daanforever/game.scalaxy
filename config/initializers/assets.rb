@@ -18,4 +18,5 @@ Rails.application.config.assets.precompile += %w(
   devise/*
   welcome.*
   sources.*
+  sources/*
 )

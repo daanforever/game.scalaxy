@@ -1,11 +1,13 @@
 -# frozen_string_literal: true
-= simple_form_for(@source) do |f|
+
+= simple_form_for(@source, remote: true, format: :json) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.association :user, label_method: :email
-    = f.input :code
+    = f.hidden_field :code
+    #editor= @source.code
+
 
   .form-actions
-    = f.button :submit, class: 'btn btn-primary'
+    = f.button :submit, class: 'btn btn-primary', id: 'submit'
