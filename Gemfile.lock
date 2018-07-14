@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/daanforever/shikashi.git
+  revision: 032abd56834bf8a2a782224e6dd577cbe5c11f8b
+  branch: bundler
+  specs:
+    shikashi (0.6.1)
+      evalhook (>= 0.6.0)
+      getsource (>= 0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -240,9 +249,6 @@ GEM
     settingson (1.7.10)
       rails (>= 4.0)
     sexp_processor (4.11.0)
-    shikashi (0.6.0)
-      evalhook (>= 0.6.0)
-      getsource (>= 0.1.0)
     simple_form (4.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -323,7 +329,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   seed_dump
   settingson
-  shikashi
+  shikashi!
   simple_form
   simplecov
   spring

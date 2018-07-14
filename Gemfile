@@ -38,7 +38,7 @@ gem 'devise'                          # Flexible authentication solution for Rai
 gem 'fie'                             # Frontend framework running over a WebSocket connection
 # gem 'safe_ruby'                       # A safe ruby sandbox for running untrusted code
 # gem 'shikashi', path: '/Users/user/Projects/Personal/shikashi'   # A ruby sandbox
-gem 'shikashi'                        # A ruby sandbox
+gem 'shikashi', github: 'daanforever/shikashi', branch: 'bundler' # A ruby sandbox
 
 group :development do
   # gem 'railroady'                     # Class diagram generator. Usage: rake diagram:all
