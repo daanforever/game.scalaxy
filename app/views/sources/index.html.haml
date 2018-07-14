@@ -1,23 +1,16 @@
-%h1 Listing sources
+%h1
+  Listing sources
+  %small
+    = link_to 'new', new_source_path
 
-%table
-  %thead
-    %tr
-      %th User
-      %th Code
-      %th
-      %th
-      %th
+- @sources.each do |source|
+  .row
+    .col-md-12
+      %pre
+        = source.code
+  .row
+    .col-md-12
+      = link_to 'Edit', edit_source_path(source)
+      = link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' }
 
-  %tbody
-    - @sources.each do |source|
-      %tr
-        %td= source.user
-        %td= source.code
-        %td= link_to 'Show', source
-        %td= link_to 'Edit', edit_source_path(source)
-        %td= link_to 'Destroy', source, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Source', new_source_path
+- console

@@ -69,6 +69,6 @@ class SourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def source_params
-      params.require(:source).permit(:user_id, :code)
+      params.require(:source).permit(:code).merge({user_id: current_user.id})
     end
 end

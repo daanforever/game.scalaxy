@@ -1,6 +1,8 @@
 -# frozen_string_literal: true
 
-= simple_form_for(@source, remote: true, format: :json) do |f|
+-# = simple_form_for(@source, remote: true, format: :json) do |f|
+
+= simple_form_for(@source) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
@@ -11,3 +13,5 @@
 
   .form-actions
     = f.button :submit, class: 'btn btn-primary', id: 'submit'
+
+= console

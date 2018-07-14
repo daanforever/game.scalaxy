@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+```
+class Say
+    def hello
+        puts 'Hello'
+        'hello'
+    end
+end
+
+Say.new.hello
+```
