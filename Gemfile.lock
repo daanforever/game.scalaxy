@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/daanforever/shikashi.git
-  revision: 032abd56834bf8a2a782224e6dd577cbe5c11f8b
+  revision: 55979913a1603d28c6d07992efdb0448cc13b450
   branch: bundler
   specs:
     shikashi (0.6.1)

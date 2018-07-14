@@ -24,4 +24,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :sources
+  has_many :messages
 end

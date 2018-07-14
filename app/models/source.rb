@@ -12,14 +12,18 @@
 class Source < ApplicationRecord
   belongs_to :user
 
+  attr_accessor :sandbox, :privileges
+
+  def sandbox
+    @sandbox ||= Shikashi::Sandbox.new
+  end
+
+  def privileges
+    @privileges ||= Privileges.new
+  end
+
   def run
-    sandbox   = Shikashi::Sandbox.new
-  	priv      = Shikashi::Privileges.new
-    priv.allow_method :new
-
-    Integer.instance_methods.each{ |m| priv.allow_method m }
-
-  	sandbox.run(priv, code)
-    sandbox.base_namespace::Say.new
+  	sandbox.run(privileges.turn, code)
+    sandbox.base_namespace::Logic.new.turn Game::Turn.new(user)
   end
 end

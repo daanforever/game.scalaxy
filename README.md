@@ -24,12 +24,12 @@ Things you may want to cover:
 * ...
 
 ```
-class Say
-    def hello
-        puts 'Hello'
-        'hello'
+class Logic
+    def turn(game)
+        game.user.messages
     end
 end
-
-Say.new.hello
 ```
+
+TODO:
+User has_many :assets
