@@ -8,7 +8,7 @@ class Privileges
     privileges.instances_of(::Integer).allow_all
     privileges.allow_const_read 'Game'
     privileges.instances_of(Game::Turn).allow_all
-    privileges.instances_of(Game::Starship).allow :turn
+    privileges.instances_of(Game::Mechanism).allow_all
     privileges.instances_of(User).allow :messages
   end
 

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/daanforever/shikashi.git
-  revision: 55979913a1603d28c6d07992efdb0448cc13b450
-  branch: bundler
+  revision: 6ef5ad42e36675ce392817b3567f9e8204b3a03b
+  branch: experimental
   specs:
     shikashi (0.6.1)
       evalhook (>= 0.6.0)

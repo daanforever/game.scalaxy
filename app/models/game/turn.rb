@@ -1,13 +1,14 @@
 class Game::Turn
-  def initialize(user)
+  def initialize(user: user)
     @user = user
   end
 
-  def user
-    @user
+  def account
+    @account ||= Game::Account.new(user: user)
   end
 
-  def balance
-    1000
+  def units
+    @units ||= account.units
   end
+
 end

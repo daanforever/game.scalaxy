@@ -15,7 +15,8 @@ class Source < ApplicationRecord
   attr_accessor :sandbox, :privileges
 
   def sandbox
-    @sandbox ||= Shikashi::Sandbox.new
+    @sandbox ||= Shikashi::Sandbox.new("::Sandbox_#{user_id}")
+    # @sandbox ||= Shikashi::Sandbox.new
   end
 
   def privileges
@@ -24,6 +25,12 @@ class Source < ApplicationRecord
 
   def run
   	sandbox.run(privileges.turn, code)
-    sandbox.base_namespace::Logic.new.turn Game::Turn.new(user)
+    self
   end
+
+  def turn
+    @logic ||= sandbox.base_namespace::Logic.new
+    @logic.turn Game::Turn.new(user: user)
+  end
+
 end

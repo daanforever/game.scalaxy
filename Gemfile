@@ -37,8 +37,9 @@ gem 'rails_semantic_logger'           # A feature rich logging framework
 gem 'devise'                          # Flexible authentication solution for Rails with Warden
 gem 'fie'                             # Frontend framework running over a WebSocket connection
 # gem 'safe_ruby'                       # A safe ruby sandbox for running untrusted code
-# gem 'shikashi', path: '/Users/user/Projects/Personal/shikashi'   # A ruby sandbox
-gem 'shikashi', github: 'daanforever/shikashi', branch: 'bundler' # A ruby sandbox
+# gem 'shikashi', path: '../shikashi'   # A ruby sandbox
+# gem 'shikashi', github: 'TotalVerb/shikashi', branch: 'unsafe' # A ruby sandbox
+gem 'shikashi', github: 'daanforever/shikashi', branch: 'experimental' # A ruby sandbox
 
 group :development do
   # gem 'railroady'                     # Class diagram generator. Usage: rake diagram:all
