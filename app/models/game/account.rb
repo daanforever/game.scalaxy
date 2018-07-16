@@ -1,21 +1,4 @@
-module Game
-  class Account
-
-    def initialize(user: user)
-      @user = user
-    end
-
-    def balance
-      @user.balance
-    end
-
-    def assets
-      @user.assets
-    end
-
-    def units
-      @user.assets.units
-    end
-
-  end
+class Game::Account < ApplicationRecord
+  belongs_to :user
+  has_many :units, class_name: 'Game::Unit'
 end

@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_30_133335) do
+ActiveRecord::Schema.define(version: 2018_07_16_172342) do
+
+  create_table "game_accounts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "balance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_game_accounts_on_user_id"
+  end
+
+  create_table "game_units", force: :cascade do |t|
+    t.integer "account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_game_units_on_account_id"
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "title"

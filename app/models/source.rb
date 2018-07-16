@@ -30,7 +30,7 @@ class Source < ApplicationRecord
 
   def turn
     @logic ||= sandbox.base_namespace::Logic.new
-    @logic.turn Game::Turn.new(user: user)
+    @logic.turn Game::State.new(user: user)
   end
 
 end
