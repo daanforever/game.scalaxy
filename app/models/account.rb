@@ -1,4 +1,5 @@
 class Game::Account < ApplicationRecord
   belongs_to :user
-  has_many :units, class_name: 'Game::Unit'
+  has_one :source
+  has_many :units
 end

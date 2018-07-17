@@ -25,5 +25,5 @@ class User < ApplicationRecord
 
   has_many :sources
   has_many :messages
-  has_one :account, class_name: 'Game::Account'
+  has_one :account
 end

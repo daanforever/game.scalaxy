@@ -10,27 +10,10 @@
 #
 
 class Source < ApplicationRecord
-  belongs_to :user
+  belongs_to :account
 
-  attr_accessor :sandbox, :privileges
-
-  def sandbox
-    @sandbox ||= Shikashi::Sandbox.new("::Sandbox_#{user_id}")
-    # @sandbox ||= Shikashi::Sandbox.new
-  end
-
-  def privileges
-    @privileges ||= Privileges.new
-  end
-
-  def run
-  	sandbox.run(privileges.turn, code)
-    self
-  end
-
-  def turn
-    @logic ||= sandbox.base_namespace::Logic.new
-    @logic.turn Game::State.new(user: user)
+  def run(sandbox:)
+    sandbox.run(code)
   end
 
 end
