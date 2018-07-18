@@ -1,19 +1,29 @@
 module Sandbox
   class Base
-    def initialize(code:)
-      @sandbox ||= Shikashi::Sandbox.new("::Sandbox_#{id}")
+
+    def initialize(account:)
+      @account = account
+      @sandbox ||= Shikashi::Sandbox.new("::Sandbox_#{@account.id}")
     end
 
     def privileges
       @privileges ||= Sandbox::Privileges.new
     end
 
-    def run(code:)
-      @sandbox.run(privileges.turn, code)
+    def turn
+      @run   ||= run
+      @units ||= Sandbox::Unit.new(@account).alive
+      logic.turn(state: Sandbox::State.new(@account, units).to_json)
     end
 
-    @logic ||= @sandbox.base_namespace::Logic.new
-    @logic.run(state: state)
+    def run
+      @sandbox.run(privileges.turn, @account.source.code)
+      true
+    end
 
-  end
-end
+    def namespace
+      @sandbox.base_namespace
+    end
+
+  end # class
+end # module

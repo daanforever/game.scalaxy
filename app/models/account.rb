@@ -1,4 +1,4 @@
-class Game::Account < ApplicationRecord
+class Account < ApplicationRecord
   belongs_to :user
   has_one :source
   has_many :units
